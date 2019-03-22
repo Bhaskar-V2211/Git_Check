@@ -34,22 +34,18 @@
         <descriptions defaultDescription="ACTIVE_FLAG"/>
         <keyMapping columnName="ACTIVE_FLAG" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="SUPERSEDED" displayAttribute="false" attributeHierarchyActive="false" order="6">
-        <descriptions defaultDescription="SUPERSEDED"/>
-        <keyMapping columnName="SUPERSEDED" columnObjectName="cv_asset_price"/>
-      </attribute>
-      <attribute id="PRICEDATE" displayAttribute="false" attributeHierarchyActive="false" order="8">
+      <attribute id="PRICEDATE" displayAttribute="false" attributeHierarchyActive="false" order="7">
         <descriptions defaultDescription="PRICEDATE"/>
         <keyMapping columnName="PRICEDATE" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="FUND_ID" displayAttribute="false" attributeHierarchyActive="false" order="9">
+      <attribute id="FUND_ID" displayAttribute="false" attributeHierarchyActive="false" order="8">
         <descriptions defaultDescription="FUND_ID"/>
         <keyMapping columnName="FUND_ID" columnObjectName="cv_asset_price"/>
       </attribute>
     
-      <attribute id="TYPECD" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <attribute id="TYPECD" displayAttribute="false" attributeHierarchyActive="false" order="9">
         <descriptions defaultDescription="TYPECD"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="TYPECD"/>
+        <keyMapping columnName="TYPECD" columnObjectName="cv_asset_price"/>
       </attribute>
     </attributes>
     <calculatedAttributes/>
@@ -61,7 +57,7 @@
       </layout>
     </privateDataFoundation>
     <baseMeasures>
-      <measure id="PRICE" order="7" measureType="simple" aggregationType="sum">
+      <measure id="PRICE" order="6" measureType="simple" aggregationType="sum">
         <descriptions defaultDescription="PRICE"/>
         <measureMapping columnName="PRICE" columnObjectName="cv_asset_price"/>
       </measure>
