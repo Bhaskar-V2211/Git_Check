@@ -1,0 +1,35 @@
+service namespace "DQProtoType.input"   {
+
+	// Entities		
+	"CH90NV"."NNROOT.Z85_Local_Development.CH90NV.DQprototype.DQ_ProtoType::Input.RULESETGROUPS" as "Rulesetgroups"
+		navigates ( "Rulesetgroups_Rulesets" as "Rulesets");
+		
+	"CH90NV"."NNROOT.Z85_Local_Development.CH90NV.DQprototype.DQ_ProtoType::Input.RULESET" as "Rulesets"
+		navigates ( "Rulesets_Rules" as "Rules");	
+	
+	"CH90NV"."NNROOT.Z85_Local_Development.CH90NV.DQprototype.DQ_ProtoType::Input.RULES" as "Rules"
+		navigates ( "Rules_Conditions" as "Conditions", 
+					"Rules_Checks" as "Checks");
+	
+	"CH90NV"."NNROOT.Z85_Local_Development.CH90NV.DQprototype.DQ_ProtoType::Input.CONDITIONS" as "Conditions";
+	
+     "CH90NV"."NNROOT.Z85_Local_Development.CH90NV.DQprototype.DQ_ProtoType::Input.CHECKS" as "Checks";
+	
+ 	// Relations	
+	association "Rulesetgroups_Rulesets" 
+		principal "Rulesetgroups"("RULESETGROUPID") multiplicity "1" 
+		dependent "Rulesets"("RULESETGROUPID") multiplicity "*";
+		
+	association "Rulesets_Rules" 
+		principal "Rulesets"("RULESETID") multiplicity "1" 
+		dependent "Rules"("RULESETID") multiplicity "*";
+	
+	association "Rules_Conditions" 
+		principal "Rules"("CONDITIONID") multiplicity "*" 
+		dependent "Conditions"("ID") multiplicity "1";	
+		
+	association "Rules_Checks" 
+		principal "Rules"("CHECKID") multiplicity "*" 
+		dependent "Checks"("ID") multiplicity "1";	
+		
+}

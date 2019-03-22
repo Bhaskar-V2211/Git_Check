@@ -1,0 +1,69 @@
+namespace NNROOT.Z85_Local_Development.CH90NV.DQprototype.DQ_ProtoType;
+
+@Schema : 'CH90NV'
+context Input
+
+{
+@Catalog.tableType: #COLUMN 
+ 	entity RULESETGROUPS {
+	    key RULESETGROUPID 	 : Integer;
+	     	RULESETGROUPNAME : String(200);
+	     	DATE_MODIFIED	 : UTCTimestamp;
+ 	};
+ 	
+ 	@Catalog.tableType: #COLUMN 
+ 	entity RULESET {
+	    key RULESETID 		: Integer;
+	     	RULESETNAME 	: String(200);
+	     	RULESETGROUPID	: Integer;
+	     	DATE_MODIFIED	: UTCTimestamp;
+ 	};
+
+ 	@Catalog.tableType: #COLUMN 
+ 	entity RULES {
+	    key RULEID 			: Integer;
+	     	RULESETID 		: Integer;
+	     	SCHEMANAME 		: String(30);
+	     	TABLENAME 		: String(150);
+	     	FIELDNAME 		: String(30);
+	     	CONDITIONID 	: Integer;
+	     	CHECKID 		: Integer;
+	     	RULETYPE 		: String(10);
+	     	VALIDFLAG 		: String(1);
+	     	ROW_COUNT 		: Integer;
+	     	EFFECTIVEFROM 	: LocalDate;
+	     	EFFECTIVETO 	: LocalDate;
+	     	SEVERITY 		: String(1);
+	     	RULENAME 		: String(30);
+	     	REMARKS 		: String(1000);
+	     	NULLEXCLUSION 	: String(5);
+	     	RULEDIMENSION 	: String(20);
+	     	DATE_MODIFIED 	: UTCTimestamp;
+ 	};
+
+ 	@Catalog.tableType: #COLUMN 
+ 	entity CONDITIONS {
+	    key ID 				: Integer;
+	    key SEQNR 			: Integer;
+	     	FIELDNAME 		: String(30);
+	     	SIGN 			: String(1);
+	     	OPTION 			: String(3);
+	     	LOW 			: String(500);
+	     	HIGH 			: String(60);
+	     	DATE_MODIFIED 	: UTCTimestamp;
+ 	};
+ 	
+ 	@Catalog.tableType: #COLUMN 
+ 	entity CHECKS {
+	    key ID 				: Integer;
+	    key SEQNR 			: Integer;
+	     	DOMAIN	 		: String(200);
+	     	CHECKTYPE 		: String(1);
+	     	SIGN 			: String(1);
+	     	OPTION 			: String(3);
+	     	LOW 			: String(160);
+	     	HIGH 			: String(60);
+	     	DATE_MODIFIED 	: UTCTimestamp;
+	};
+
+};
