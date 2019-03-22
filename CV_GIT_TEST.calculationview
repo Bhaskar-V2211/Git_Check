@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="CV_GIT_TEST" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_GIT_TEST" outputViewType="Aggregation" executionSemantic="UNDEFINED" enforceSqlExecution="false" dataCategory="CUBE" calculationScenarioType="TREE_BASED" visibility="reportingEnabled" translationRelevant="true" hierarchiesSQLEnabled="false" defaultLanguage="$$language$$" defaultClient="$$client$$" checkAnalyticPrivileges="true" applyPrivilegeType="ANALYTIC_PRIVILEGE" schemaVersion="2.3">
   <descriptions defaultDescription="CV_GIT_TEST"/>
   <localVariables/>
   <variableMappings/>
@@ -14,37 +14,42 @@
   <logicalModel id="cv_asset_price">
     <descriptions/>
     <attributes>
-      <attribute id="PRICINGREGIMECD" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="PRICINGREGIMECD" displayAttribute="false" attributeHierarchyActive="false" order="1">
         <descriptions defaultDescription="PRICINGREGIMECD"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="PRICINGREGIMECD"/>
+        <keyMapping columnName="PRICINGREGIMECD" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="ID" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="ID" displayAttribute="false" attributeHierarchyActive="false" order="2">
         <descriptions defaultDescription="ID"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="ID"/>
+        <keyMapping columnName="ID" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="HISTORY_TABLE_ID" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="HISTORY_TABLE_ID" displayAttribute="false" attributeHierarchyActive="false" order="3">
         <descriptions defaultDescription="HISTORY_TABLE_ID"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="HISTORY_TABLE_ID"/>
+        <keyMapping columnName="HISTORY_TABLE_ID" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="DELETION_FLAG" order="4" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="DELETION_FLAG" displayAttribute="false" attributeHierarchyActive="false" order="4">
         <descriptions defaultDescription="DELETION_FLAG"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="DELETION_FLAG"/>
+        <keyMapping columnName="DELETION_FLAG" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="ACTIVE_FLAG" order="5" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="ACTIVE_FLAG" displayAttribute="false" attributeHierarchyActive="false" order="5">
         <descriptions defaultDescription="ACTIVE_FLAG"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="ACTIVE_FLAG"/>
+        <keyMapping columnName="ACTIVE_FLAG" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="SUPERSEDED" order="6" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="SUPERSEDED" displayAttribute="false" attributeHierarchyActive="false" order="6">
         <descriptions defaultDescription="SUPERSEDED"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="SUPERSEDED"/>
+        <keyMapping columnName="SUPERSEDED" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="PRICEDATE" order="8" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="PRICEDATE" displayAttribute="false" attributeHierarchyActive="false" order="8">
         <descriptions defaultDescription="PRICEDATE"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="PRICEDATE"/>
+        <keyMapping columnName="PRICEDATE" columnObjectName="cv_asset_price"/>
       </attribute>
-      <attribute id="FUND_ID" order="9" attributeHierarchyActive="false" displayAttribute="false">
+      <attribute id="FUND_ID" displayAttribute="false" attributeHierarchyActive="false" order="9">
         <descriptions defaultDescription="FUND_ID"/>
-        <keyMapping columnObjectName="cv_asset_price" columnName="FUND_ID"/>
+        <keyMapping columnName="FUND_ID" columnObjectName="cv_asset_price"/>
+      </attribute>
+    
+      <attribute id="TYPECD" order="10" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="TYPECD"/>
+        <keyMapping columnObjectName="cv_asset_price" columnName="TYPECD"/>
       </attribute>
     </attributes>
     <calculatedAttributes/>
@@ -56,9 +61,9 @@
       </layout>
     </privateDataFoundation>
     <baseMeasures>
-      <measure id="PRICE" order="7" aggregationType="sum" measureType="simple">
+      <measure id="PRICE" order="7" measureType="simple" aggregationType="sum">
         <descriptions defaultDescription="PRICE"/>
-        <measureMapping columnObjectName="cv_asset_price" columnName="PRICE"/>
+        <measureMapping columnName="PRICE" columnObjectName="cv_asset_price"/>
       </measure>
     </baseMeasures>
     <calculatedMeasures/>
@@ -67,8 +72,8 @@
   </logicalModel>
   <layout>
     <shapes>
-      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-        <upperLeftCorner x="40" y="85"/>
+      <shape modelObjectNameSpace="MeasureGroup" modelObjectName="Output" expanded="true">
+        <upperLeftCorner y="85" x="40"/>
         <rectangleSize height="0" width="0"/>
       </shape>
     </shapes>
